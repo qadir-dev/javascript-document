@@ -67,3 +67,20 @@ function* even(n) {
 const evenGen = even(8);
 evenGen.next(); //8
 evenGen.next(); //10
+
+//iife
+(function () {
+  console.log("immediately invoked function expressions");
+})();
+
+//factory function
+function factory(val1) {
+  return function (val2) {
+    return val1 * val2;
+  };
+}
+
+const square = factory(2);
+const cube = factory(3);
+square(4); //8
+clcube(4); //12
